@@ -101,4 +101,50 @@
       transform: rotate(360deg);
     }
   }
+
+  .animated-button {
+    margin: 25px;
+    border-radius: 8px;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 315px;
+    height: 315px;
+    overflow: hidden;
+  }
+
+  .animated-button::before {
+    content: "";
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    background: conic-gradient(red,orange, yellow, green, blue, violet, red);
+  }
+
+  .animated-button:hover::before {
+    animation: rotate 1.5s linear infinite;
+  }
+
+  .animated-button::after {
+    content: "hello tanya";
+    width: 93%;
+    height: 93%;
+    background: black;
+    position: absolute;
+    color: white;
+    text-align: center;
+    align-self: center;
+    font-size: larger;
+    text-transform: uppercase;
+    border-radius: 8px;
+    line-height: 283.5px;
+    letter-spacing: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  @keyframes rotate {
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
   
