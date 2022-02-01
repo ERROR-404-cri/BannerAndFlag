@@ -1,0 +1,37 @@
+.neuMorphism {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    position: relative;
+  }
+  .neuMorphism:before {
+    content: "CLICK";
+    position: absolute;
+    width: 100px;
+  /*   height:100px; */
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #808080a6, -5px -5px 7px white; 
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: orange;
+    background: linear-gradient(115deg, #cfcece5c, white);
+    cursor: pointer; 
+  }
+  .neuMorphism:hover::before {
+      animation: move 0.3s linear;
+  }
+  .neuMorphism:active::before { 
+    color: green;
+    content: "CLICKED";
+    box-shadow: inset 5px 5px 5px #808080a6, inset -5px -5px 7px white; 
+  }
+  @keyframes move { 
+    100% {
+  background-position : 150px; 
+    }
+  }
