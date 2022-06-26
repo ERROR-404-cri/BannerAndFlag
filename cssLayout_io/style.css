@@ -1,0 +1,190 @@
+/* #container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  padding: 10px;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.heading input {
+  display: none;
+}
+
+label::before {
+  content: "";
+  width: 5%;
+  height: 20px;
+  clip-path: polygon(0% 0%, 100% 50%, 100% 50%, 0% 100%);
+  background-color: grey;
+  display: inline-block;
+  transition: all 100ms linear;
+}
+label::after {
+  content: attr(data-content);
+  display: none;
+  width: 100%;
+  margin-top: 10px;
+  border-top: 1px solid black;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 2s linear;
+}
+label {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2px;
+  align-items: center;
+  gap: 0px 3%;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.heading input:checked + label::before {
+  transform: rotate(90deg);
+}
+
+.heading input:checked + label::after {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.heading input:checked + label {
+  border-bottom: 1px solid transparent;
+} */
+
+#container {
+  display: flex;
+  position: relative;
+}
+
+.circle {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  background-color: rgb(218, 216, 216);
+  border-radius: 50%;
+  border: 4px solid white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.circle:not(:first-child) {
+  margin-left: -12px;
+  font-size: 20px;
+}
+
+.circle:hover {
+  background-color: lightgreen;
+}
+
+.circle:last-child:hover::after {
+  content: "P, Q, R ,S ,T";
+  position: absolute;
+  left: 110%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100vw;
+  color: lightcoral;
+  z-index: 2;
+  font-size: initial;
+}
+
+.crossBtn {
+  margin: 20px;
+  width: 25px;
+  height: 10px;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crossBtn::before {
+  position: absolute;
+  content: "";
+  width: 25px;
+  border-top: 2px solid grey;
+  display: none;
+  transition: all 200ms linear;
+}
+
+.crossBtn::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  border-top: 2px solid grey;
+  display: none;
+  transition: all 200ms linear;
+}
+
+.crossBtn:hover {
+  border: none;
+}
+.crossBtn:hover::before {
+  display: block;
+  transform: rotate(-45deg);
+}
+
+.crossBtn:hover::after {
+  display: block;
+  transform: rotate(45deg);
+}
+
+.drop {
+  width: 50px;
+  height: 50px;
+  /* border: 2px solid lightgrey; */
+  border-radius: 0% 50% 50% 50%;
+  transform: rotate(45deg);
+  background-color: grey;
+  margin: 20px;
+}
+
+.zigZagContainer {
+  margin: 20px;
+}
+.box {
+  padding: 15px 30px;
+  border-bottom: 1px solid grey;
+  position: relative;
+}
+
+.box:nth-child(odd) {
+  border-right: 1px solid grey;
+}
+
+.box:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: grey;
+  right: 0px;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.box:nth-child(even) {
+  border-left: 1px solid grey;
+}
+
+.box:nth-child(even)::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: grey;
+  left: 0px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
