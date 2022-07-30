@@ -188,3 +188,73 @@ label {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.cropTextContainer {
+  background: linear-gradient(45deg, rgb(245, 87, 70), rgb(99, 240, 99));
+  font-size: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.styledInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputClass {
+  display: none;
+}
+
+.labelContainer {
+  width: 40px;
+  height: 40px;
+  border: 2px solid grey;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.labelContainer::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rebeccapurple;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.inputClass:checked + .labelContainer {
+  border: 3px solid rebeccapurple;
+}
+
+.inputClass:checked + .labelContainer::before {
+  display: initial;
+  animation: moveOut 300ms linear 0s 1;
+}
+
+@keyframes moveOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.flex {
+  display: flex;
+  gap: 0px 20px;
+  font-size: 20px;
+  align-items: center;
+}
